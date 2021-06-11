@@ -8,9 +8,13 @@ function App() {
     <div className="App">
       <Header/>
       <h2 className= "title is-2 has-color-primary">
-        Hello World
-      </h2>
-      <Card/>
+          Hello World
+        </h2>
+      <section>        
+        <Card/>
+        <Card/>
+        <Card/>
+      </section>
     </div>
   );
 }

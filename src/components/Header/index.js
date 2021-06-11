@@ -1,23 +1,24 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
-//import '../../../sass/mystyles.scss';
-
 
 
 
 function Header() {
+    const logoImage = "https://bulma.io/images/bulma-logo.png";
+    
     const [open, setOpen] = useState(false)
-
     const burgerToggle = () => {
-    setOpen(!open);
+        setOpen(!open);
     }
 
+
     return (
-        <nav className = "navbar">
+        <nav className = "navbar is-fixed-top">
             <div className = "navbar-brand">
-                <a className="navbar-item" href="https://bulma.io">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt=""/>
+                <a className="navbar-item" href="/">
+                    {/* <img src={logoImage} width="112" height="28" alt=""/> */}
+                    <h1 className="title is-5"> Golden Shoe </h1>
                 </a>
 
                 <div className={`navbar-burger ${open ? "is-active" : ""}`} onClick={burgerToggle}>
@@ -44,12 +45,9 @@ function Header() {
                             <div className="navbar-item">
                                 Contact
                             </div>
-                            <hr className="navbar-divider"/>
-                            <div className="navbar-item">
-                                Report an issue
-                            </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div className="navbar-end">
@@ -59,7 +57,7 @@ function Header() {
                                 <FontAwesomeIcon icon={faUser} size="2x"/>
                             </button>
                             <button className="button is-white">
-                            <FontAwesomeIcon icon={faShoppingBag} size="2x"/>
+                                <FontAwesomeIcon icon={faShoppingBag} size="2x"/>
                             </button>
                         </div>
                     </div>
