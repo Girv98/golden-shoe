@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 
 
-
 function Header() {
     const logoImage = "https://bulma.io/images/bulma-logo.png";
     
@@ -14,7 +13,7 @@ function Header() {
 
 
     return (
-        <nav className = "navbar is-fixed-top">
+        <nav className = "navbar is-fixed-top has-centered-menu">
             <div className = "navbar-brand">
                 <a className="navbar-item" href="/">
                     {/* <img src={logoImage} width="112" height="28" alt=""/> */}
@@ -28,26 +27,19 @@ function Header() {
                 </div>
             </div>
 
-            <div id = "navbarBasicExample" className = {`navbar-menu ${open ? "is-active" : ""}`}>
+            <div id = "navbarBasicExample" className = {`navbar-menu  ${open ? "is-active" : ""}`}>
                 <div className="navbar-start">
                     <div className="navbar-item">
                         Products
                     </div>
 
-                    <div className="navbar-item has-dropdown is-hoverable">
-                        <div className="navbar-link">
-                        More
-                        </div>
-                        <div className="navbar-dropdown">
-                            <div className="navbar-item">
-                                About
-                            </div>
-                            <div className="navbar-item">
-                                Contact
-                            </div>
-                        </div>
+                    <div className="navbar-item">
+                        About
                     </div>
-
+                    <div className="navbar-item">
+                        Contact
+                    </div>
+                    
                 </div>
 
                 <div className="navbar-end">
