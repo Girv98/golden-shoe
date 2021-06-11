@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './sass/mystyles.scss';
 import App from './App';
+
+import 'bulma/css/bulma.min.css'
 
 
 ReactDOM.render(
