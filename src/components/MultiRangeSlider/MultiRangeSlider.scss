@@ -1,0 +1,100 @@
+
+
+$width: 50%;
+$thumb-radius: 18px;
+
+
+.container {
+  display: flex;
+  //align-items: center;
+  justify-content: center;
+  padding: 2em 0em;
+  //position: relative;
+};
+
+.slider {
+  position: relative;
+  width: $width;
+  //align-items: center;
+};
+
+.slider-track,
+.slider-range,
+.slider-value {
+  position: absolute;
+};
+
+.slider-track,
+.slider-range {
+  border-radius: 10px;
+  height: 5px;
+};
+
+.slider-track {
+  background-color: #000;
+  width: 100%;
+  z-index: 2;
+};
+
+.slider-range {
+  background-color: #000;
+  z-index: 2;
+};
+
+.slider-value {
+  color: #000;
+  font-size: 12px;
+  margin-top: 10px;
+  width: 100%;
+  left: $thumb-radius;
+};
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+};
+
+.thumb {
+  pointer-events: none;
+  height: 0;
+  width: $width;
+  outline: none;
+  position: absolute;
+};
+
+.thumb-left {
+  z-index: 3;
+};
+
+.thumb-right {
+  z-index: 3;
+};
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #000;
+  cursor: pointer;
+  height: $thumb-radius;
+  width: $thumb-radius;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #000;
+  cursor: pointer;
+  height: $thumb-radius;
+  width: $thumb-radius;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}

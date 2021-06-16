@@ -4,7 +4,6 @@ import {faUser, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 
 
 function Header() {
-    const logoImage = "https://bulma.io/images/bulma-logo.png";
     
     const [open, setOpen] = useState(false)
     const burgerToggle = () => {
@@ -13,6 +12,7 @@ function Header() {
 
 
     return (
+        <section className="section">
         <nav className = "navbar is-fixed-top has-centered-menu">
             <div className = "navbar-brand">
                 <a className="navbar-item" href="/">
@@ -29,7 +29,7 @@ function Header() {
 
             <div id = "navbarBasicExample" className = {`navbar-menu  ${open ? "is-active" : ""}`}>
                 <div className="navbar-start">
-                    <div className="navbar-item">
+                    {/* <div className="navbar-item">
                         Products
                     </div>
 
@@ -38,24 +38,25 @@ function Header() {
                     </div>
                     <div className="navbar-item">
                         Contact
-                    </div>
+                    </div> */}
                     
                 </div>
 
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <button className="button is-white">
+                            <a className="button is-white" title="Account">
                                 <FontAwesomeIcon icon={faUser} size="2x"/>
-                            </button>
-                            <button className="button is-white">
+                            </a>
+                            <a className="button is-white" href="/basket" title="Basket">
                                 <FontAwesomeIcon icon={faShoppingBag} size="2x"/>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
+        </section>
     );
 };
 
