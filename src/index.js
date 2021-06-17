@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './sass/mystyles.scss';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 import 'bulma/css/bulma.min.css'
+import './sass/main.scss';
 
 
 ReactDOM.render(

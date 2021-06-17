@@ -45,7 +45,7 @@ function Header() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-white" title="Account">
+                            <a className="button is-white" href="/account" title="Account">
                                 <FontAwesomeIcon icon={faUser} size="2x"/>
                             </a>
                             <a className="button is-white" href="/basket" title="Basket">

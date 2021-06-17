@@ -1,0 +1,18 @@
+
+
+section{
+    display: flex !important;
+    flex-wrap: wrap;
+    flex-direction: row !important; 
+    justify-content: flex-start;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    section{
+        flex-direction: column;
+		padding: 1vw;
+		width: 100%;
+    }
+}

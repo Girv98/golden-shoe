@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@import '../../node_modules/bulma/bulma.sass';
+
+
+$primary: #FF0000;
+
+// components
+@import '../components/CardList/cardlist';
+@import '../components/Card/card';
+@import '../components/Header/navbar';
+@import '../components/MultiRangeSlider/multiRangeSlider';
+@import '../components/Login/login';;

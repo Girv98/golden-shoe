@@ -9,6 +9,7 @@ import MainLayout from './layouts/MainLayout';
 // Pages
 import Home from './pages/Home';
 import Basket from './pages/Basket';
+import Account from './pages/Account';
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
         <Route exact path="/basket" render={() => (
           <MainLayout>
             <Basket/>
+          </MainLayout>
+        )} />
+        <Route exact path="/account" render={() => (
+          <MainLayout>
+            <Account/>
           </MainLayout>
         )} />
       </Switch>
