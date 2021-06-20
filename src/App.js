@@ -40,9 +40,7 @@ class App extends Component {
   }
 
   render() {  
-    const { currentUser } = this.props;
-
-
+    
     return (
       <div className="App">
         <Switch>
@@ -66,7 +64,7 @@ class App extends Component {
     );
 
   }
-}
+};
 
 const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser

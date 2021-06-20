@@ -1,0 +1,13 @@
+
+box {
+    display: flex !important;
+    flex-direction: row !important; 
+    justify-content: center !important;
+
+}
+.content {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: space-between !important;
+}
