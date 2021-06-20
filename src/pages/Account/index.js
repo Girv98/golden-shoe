@@ -1,29 +1,43 @@
 import React from 'react';
 
-import LogIn from './../../components/LogIn'
+import LogIn from './../../components/LogIn';
+import { auth } from './../../firebase/utils';
 
-
-const LoginPage = props => {
-    return <LogIn />;
-}
 
 const AccountInfo = props => {
-    return <div>Account</div>;
+    return (
+        <>
+        <h1 className= "is-size-1">Account</h1>
+        <section className="is-fullheight">
+            <button className="button" onClick={() => auth.signOut()}>
+                Log Out
+            </button>
+        </section>
+        </>
+    );
 }
-
-const Greet = props => {
-    const isLoggedIn = props.isLoggedIn;
-    if (isLoggedIn) {
-        return <AccountInfo />;
-    }
-    return <LoginPage />;
-}
-
 
 const Account = props => {
+
+    const { currentUser } = props;
+
+    console.log(currentUser);
+
     return (
-        <Greet isLoggedIn={false}/>
+        <>
+            {currentUser && (
+                <AccountInfo />
+            )}
+
+            {!currentUser && (
+                <LogIn />
+            )}
+        </>
     );
+};
+
+Account.defaultProps = {
+    currentUser: null
 };
 
 export default Account;

@@ -8,12 +8,11 @@ function CardList() {
         // Fetch from API
         // Filter Menu and Options
         // Render Cards
-        <section> 
-            <h2 className="has-text-primary">Hello</h2>       
+        <div className="card-wrapper">
             <Card />
             <Card />
             <Card />
-        </section>
+        </div>
     );
 };
 
