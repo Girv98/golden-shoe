@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import LogIn from './../../components/LogIn';
 import { auth } from './../../firebase/utils';
+import LogIn from './../../components/LogIn';
 
 
 const AccountInfo = props => {
@@ -40,4 +41,8 @@ Account.defaultProps = {
     currentUser: null
 };
 
-export default Account;
+const mapStateToProps = ({ user }) => ({
+    currentUser: user.currentUser
+});
+
+export default connect(mapStateToProps, null)(Account);

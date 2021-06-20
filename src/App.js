@@ -1,7 +1,9 @@
 //import './sass/mystyles.scss';
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom';
 import { auth, handleUserProfile } from './firebase/utils';
+import { setCurrentUser } from './redux/User/user.actions';
 
 // Layouts
 import MainLayout from './layouts/MainLayout';
@@ -12,39 +14,24 @@ import Home from './pages/Home';
 import Basket from './pages/Basket';
 import Account from './pages/Account';
 
-
-const initialState = {
-  currentUser: null
-};
-
 class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      ...initialState
-    };
-  }
-
   authListener = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
+
     this.authListener = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await handleUserProfile(userAuth);
         userRef.onSnapshot(snapshot => {
-          this.setState({
-            currentUser: {
-              id: snapshot.id,
-              ...snapshot.data()
-            }
+          setCurrentUser({
+            id: snapshot.id,
+            ...snapshot.data()
           });
         });
       }
 
-      this.setState({
-        ...initialState
-      });
+      setCurrentUser(userAuth);
     });
   }
 
@@ -53,7 +40,7 @@ class App extends Component {
   }
 
   render() {  
-    const { currentUser } = this.state;
+    const { currentUser } = this.props;
 
 
     return (
@@ -61,17 +48,17 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={() => (
             <MainLayout>
-              <Home currentUser={currentUser}/>
+              <Home />
             </MainLayout>
           )} />
           <Route exact path="/basket" render={() => (
             <MainLayout>
-              <Basket currentUser={currentUser}/>
+              <Basket />
             </MainLayout>
           )} />
           <Route exact path="/account" render={() => (
             <MainLayout>
-              <Account currentUser={currentUser}/>
+              <Account />
             </MainLayout>
           )} />
         </Switch>
@@ -81,4 +68,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
