@@ -37,21 +37,21 @@ This will automatically open your browser at `localhost:3000`
 
 ## Planned Features
 
-- Responsive design
-- Card grid of products 
-- Search Bar
-- View of shoes in multiple colours
-- Shoe size picker
+- Responsive design (DONE)
+- Card grid of products (DONE)
+- Shoe size picker 
 - Size Guide
 - Filtering by gender, price, size & colour and out-of-stock
-- Shows out-of-stock shoes as such
-- User Log In & Sign Up
+- Shows out-of-stock shoes as such (DONE)
+- User Log In & Sign Up (DONE)
 - Fully functional basket
-- Vouchers subtracking from price
-- Checkout
 
 **Possible Future Features**
+- Search Bar
+- Checkout
+- Vouchers
 - Returns Process
+- View of shoes in multiple colours
 - Social Media Icons
 
 
