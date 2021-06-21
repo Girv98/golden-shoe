@@ -15,8 +15,8 @@ This project has the following dependancies:
 - Firebase
 - Bulma
 - FontAwesome
+- Redux
 - GraphQL (TODO)
-- Redux (TODO)
 
 
 After cloning the repo, navigate to the root of the folder in a terminal and run the following command:
