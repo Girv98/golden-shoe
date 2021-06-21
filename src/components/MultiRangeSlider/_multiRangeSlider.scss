@@ -6,10 +6,8 @@ $thumb-radius: 18px;
 
 .container {
   display: flex;
-  //align-items: center;
   justify-content: center;
-  padding: 2em 0em;
-  //position: relative;
+  padding: 0em 0em 3em 0em;
 };
 
 .slider {
@@ -46,7 +44,6 @@ $thumb-radius: 18px;
   font-size: 12px;
   margin-top: 10px;
   width: 100%;
-  left: $thumb-radius;
 };
 
 /* Removing the default appearance */

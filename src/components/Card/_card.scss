@@ -1,19 +1,29 @@
 
 .card {
     width: 300px;
-    margin: 1em;
-}
+    margin: 1rem;
 
-.card-content {
-    display: flex !important;
-    flex-direction: row !important;
-    width: 100%;
-    justify-content: space-between !important;
+    .card-content {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100%;
+        justify-content: space-between !important;
+    }
 }
 
 
 @media screen and (max-width: 700px) {
     .card {
-        //width: 100% !important;
+        width: 100% !important;
+        margin: 1rem 0rem 1rem 0rem;
+        justify-content: space-between !important;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card {
+        width: 80vw !important;
+        margin: 1rem 0rem 1rem 0rem;
+        justify-content: space-between !important;
     }
 }

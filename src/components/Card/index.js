@@ -9,6 +9,8 @@ function Card() {
     const itemPrice = "£100.00";
     const itemImage = "https://bulma.io/images/placeholders/1280x960.png";
 
+    const inStock = false;
+
     return (
         <Link to="/basket">
             <div className="card">
@@ -19,7 +21,7 @@ function Card() {
                 </div>
                 <div className="card-content">
                     <div className="subtitle left">{itemName}</div>
-                    <div className="subtitle right">{itemPrice}</div>
+                    <div className={`subtitle right ${inStock ? "has-text-black" : "has-text-danger"}`}>{inStock ? itemPrice : "Out of Stock"}</div>
                 </div>
 
             </div>
