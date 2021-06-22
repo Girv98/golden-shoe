@@ -28,12 +28,10 @@ const Home = props => {
             <button className="button mr-6">Sort by Price</button>
         </div>
             <div className="home-wrapper columns is-gapless"> 
-                {showFilters && (
-                    <div className={`filter-wrapper column ${isMobile ? "is-one-quarter" : "is-one-fifth"}`}>       
-                        <Filters />
-                    </div>
 
-                )}
+                <div className={`filter-wrapper column ${isMobile ? "is-one-quarter" : "is-one-fifth"} ${showFilters ? "" : "is-hidden"}`}>       
+                    <Filters />
+                </div>
                 
                 <div className="card-wrapper column">
                     <CardList />

@@ -2,6 +2,10 @@
 
 @import '../../node_modules/bulma/bulma.sass';
 
+// layouts
+@import '../layouts/mainlayout';
+
+
 // components
 @import '../components/CardList/cardlist';
 @import '../components/Card/card';

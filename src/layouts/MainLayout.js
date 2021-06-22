@@ -7,8 +7,12 @@ const MainLayout = props => {
     return (
         <>
             <Header/>
-            {props.children}
-            <Footer/>
+            <body>
+                <div className="main-section">
+                    {props.children}
+                </div>
+                <Footer/>
+            </body>
         </>
     );
 };
