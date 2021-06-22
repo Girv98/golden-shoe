@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// import { fetchProductsStart } from './../../redux/Products/products.actions';
 
 // Components
 import Filters from './../../components/Filters';

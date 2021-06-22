@@ -7,12 +7,12 @@ const MainLayout = props => {
     return (
         <>
             <Header/>
-            <body>
+            <div className="main-body">
                 <div className="main-section">
                     {props.children}
                 </div>
                 <Footer/>
-            </body>
+            </div>
         </>
     );
 };

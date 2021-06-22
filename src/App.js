@@ -13,6 +13,7 @@ import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import Basket from './pages/Basket';
 import Account from './pages/Account';
+import ProductPage from './pages/ProductPage';
 
 class App extends Component {
   authListener = null;
@@ -57,6 +58,11 @@ class App extends Component {
           <Route exact path="/account" render={() => (
             <MainLayout>
               <Account />
+            </MainLayout>
+          )} />
+          <Route exact path="/product:productID" render={() => (
+            <MainLayout>
+              <ProductPage />
             </MainLayout>
           )} />
         </Switch>
