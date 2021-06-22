@@ -1,6 +1,6 @@
 
 
-$width: 50%;
+$width: 80%;
 $thumb-radius: 18px;
 
 
@@ -13,7 +13,6 @@ $thumb-radius: 18px;
 .slider {
   position: relative;
   width: $width;
-  //align-items: center;
 };
 
 .slider-track,
@@ -68,7 +67,7 @@ $thumb-radius: 18px;
   z-index: 3;
 };
 
-/* For Chrome browsers */
+/* Chrome */
 .thumb::-webkit-slider-thumb {
   background-color: #fff;
   border: none;
@@ -82,7 +81,7 @@ $thumb-radius: 18px;
   position: relative;
 }
 
-/* For Firefox browsers */
+/* Firefox */
 .thumb::-moz-range-thumb {
   background-color: #fff;
   border: none;

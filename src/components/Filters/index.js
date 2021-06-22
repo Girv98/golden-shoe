@@ -21,16 +21,16 @@ const Filters = props =>  {
         </div>
 
         <div className="has-text-centered">
-            <h2 className="subtitle mb-4">Price</h2>
+            <h2 className="subtitle">Price</h2>
             <div className="mb-4">
-                <MultiRangeSlider min={props.minPrice} max={props.maxPrice} setMin={props.setMinPrice} setMax={props.setMax} />
+                <MultiRangeSlider min={props.minPriceRef} max={props.maxPriceRef} setMin={props.setMinPrice} setMax={props.setMaxPrice} />
             </div>
         </div>
 
         <div className="has-text-centered">
             <h2 className="subtitle mb-4">Size</h2>
             <div className="is-centered">
-                <SizeButtons size={props.size} seiSize={props.setSize} />
+                <SizeButtons size={props.size} setSize={props.setSize} />
             </div>
         </div>
 

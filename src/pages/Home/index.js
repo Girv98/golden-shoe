@@ -31,8 +31,11 @@ const Home = props => {
     const [colour, setColour] = useState("a");
     const [size, setSize] = useState("a");
 
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(100);
+    const minPriceRef = 0;
+    const maxPriceRef = 100;
+
+    const [minPrice, setMinPrice] = useState(minPriceRef);
+    const [maxPrice, setMaxPrice] = useState(maxPriceRef);
 
 
     useEffect(() => {
@@ -73,14 +76,22 @@ const Home = props => {
                             setColour={setColour} 
                             size={size}
                             setSize={setSize}
+                            minPriceRef={minPriceRef}
                             minPrice={minPrice}
                             setMinPrice={setMinPrice}
+                            maxPriceRef={maxPriceRef}
                             maxPrice={maxPrice}
                             setMaxPrice={setMaxPrice} />
                 </div>
                 
                 <div className="card-wrapper column">
-                    <CardList productsArray={products} showOOS={showOOS}/>
+                    <CardList productsArray={products}
+                            showOOS={showOOS} 
+                            gender={gender} 
+                            colour={colour} 
+                            size={size} 
+                            minPrice={minPrice}
+                            maxPrice={maxPrice} />
                 </div>
             </div>
         </section>

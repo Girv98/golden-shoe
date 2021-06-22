@@ -12,11 +12,18 @@ const Card = props => {
     let sizes = props.sizes;
 
     const stock = props.stock;
+    const inSize = props.inSize;
 
     let inStock = false;
 
     if (stock > 0) {
         inStock = true;
+    }
+
+    let warningText = "Out of Stock";
+
+    if (!inSize) {
+        warningText = "Not in Size";
     }
 
     return (
@@ -29,7 +36,7 @@ const Card = props => {
                 </div>
                 <div className="card-content">
                     <div className="subtitle left">{itemName}</div>
-                    <div className={`subtitle right ${inStock ? "has-text-black" : "has-text-danger"}`}>{inStock ? `£${itemPrice}` : "Out of Stock"}</div>
+                    <div className={`subtitle right ${inStock ? "has-text-black" : "has-text-danger"}`}>{inStock ? `£${itemPrice}` : warningText }</div>
                 </div>
 
             </div>

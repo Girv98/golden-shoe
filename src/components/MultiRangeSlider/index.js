@@ -2,13 +2,18 @@ import React, {useState, useEffect, useRef, useCallback} from 'react';
 import PropTypes from "prop-types";
 
 
-const MultiRangeSlider = ({min, max}) => {
+const MultiRangeSlider = props => {
+
+    const min = props.min;
+    const max = props.max;
 
     const [minVal, setMinVal] = useState(min);
     const [maxVal, setMaxVal] = useState(max);
     const minValRef = useRef(min);
     const maxValRef = useRef(max);
     const range = useRef(null);
+
+    
 
 
     // Convert to percentage
@@ -52,6 +57,7 @@ const MultiRangeSlider = ({min, max}) => {
                     const value = Math.min(Number(event.target.value), maxVal - 1);
                     setMinVal(value);
                     minValRef.current = value;
+                    props.setMin(value);
                 }}
                 className="thumb thumb-left"
                 style={{ zIndex: minVal > max - 100 && "5" }}
@@ -66,6 +72,7 @@ const MultiRangeSlider = ({min, max}) => {
                     const value = Math.max(Number(event.target.value), minVal + 1);
                     setMaxVal(value);
                     maxValRef.current = value;
+                    props.setMax(value);
                 }}
                 className="thumb thumb-right"
             />

@@ -6,7 +6,14 @@ const CardList = props => {
 
     const products = props.productsArray;
     const showOOS = props.showOOS;
+    const gender = props.gender;
+    const colour = props.colour;
+    const size = props.size;
+    const minPrice = props.minPrice;
+    const maxPrice = props.maxPrice;
+
     let show = false;
+
 
     return (
 
@@ -17,9 +24,29 @@ const CardList = props => {
                 if (!productImage || !productName || 
                 typeof productPrice === 'undefined') return null;
 
+                if (gender == "f" && productIsMale) return null;
+                if (gender == "m" && !productIsMale) return null;
+
+                if (colour != "a" && !productColour.includes(colour)) return null;
+
+                if (productPrice > maxPrice || productPrice < minPrice) return null;
+                
+
                 let stock = 0;
-                for (let key in productSizes) {
-                    stock += productSizes[key];
+                let inSize = true;
+
+                if (typeof productSizes !== 'undefined') {
+
+                    for (let key in productSizes) {
+                        stock += productSizes[key];
+                    }   
+
+                    if (size != "a") {
+                        if (productSizes[size] == 0) {
+                            stock = 0
+                            inSize = false;
+                        }
+                    }
                 }
 
                 return (
@@ -31,7 +58,8 @@ const CardList = props => {
                             sizes={productSizes}
                             colours={productColour}
                             isMale={productIsMale} 
-                            stock={stock}/>
+                            stock={stock}
+                            inSize={inSize} />
                     )}
 
                     {(stock == 0) && showOOS && (
@@ -41,7 +69,8 @@ const CardList = props => {
                             sizes={productSizes}
                             colours={productColour}
                             isMale={productIsMale}
-                            stock={stock} />
+                            stock={stock} 
+                            inSize={inSize} />
                     )}
                     </>
                 );
