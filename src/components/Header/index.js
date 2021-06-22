@@ -16,7 +16,6 @@ function Header() {
         <nav className = "navbar is-fixed-top has-centered-menu">
             <div className = "navbar-brand">
                 <a className="navbar-item" href="/">
-                    {/* <img src={logoImage} width="112" height="28" alt=""/> */}
                     <h1 className="title is-5"> Golden Shoe </h1>
                 </a>
 
@@ -45,12 +44,12 @@ function Header() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <button className="button is-white" href="/account" title="Account">
+                            <a className="button is-white" href="/account" title="Account">
                                 <FontAwesomeIcon icon={faUser} size="2x"/>
-                            </button>
-                            <button className="button is-white" href="/basket" title="Basket">
+                            </a>
+                            <a className="button is-white" href="/basket" title="Basket">
                                 <FontAwesomeIcon icon={faShoppingBag} size="2x"/>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
