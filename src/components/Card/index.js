@@ -3,13 +3,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-function Card() {
+const Card = props => {
 
-    const itemName = "Placeholder"
-    const itemPrice = "£100.00";
-    const itemImage = "https://bulma.io/images/placeholders/1280x960.png";
+    const itemName = props.name;
+    const itemPrice = props.price;
+    const itemImage = props.image;
+    
+    let sizes = props.sizes;
 
-    const inStock = false;
+    const stock = props.stock;
+
+    let inStock = false;
+
+    if (stock > 0) {
+        inStock = true;
+    }
 
     return (
         <Link to="/basket">
@@ -21,7 +29,7 @@ function Card() {
                 </div>
                 <div className="card-content">
                     <div className="subtitle left">{itemName}</div>
-                    <div className={`subtitle right ${inStock ? "has-text-black" : "has-text-danger"}`}>{inStock ? itemPrice : "Out of Stock"}</div>
+                    <div className={`subtitle right ${inStock ? "has-text-black" : "has-text-danger"}`}>{inStock ? `£${itemPrice}` : "Out of Stock"}</div>
                 </div>
 
             </div>
