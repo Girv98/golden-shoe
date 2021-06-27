@@ -3,6 +3,8 @@
 $width: 80%;
 $thumb-radius: 18px;
 
+$hover-colour: $accent--dark;
+
 
 .container {
   display: flex;
@@ -28,18 +30,18 @@ $thumb-radius: 18px;
 };
 
 .slider-track {
-  background-color: #000;
+  background-color: $primary--dark;
   width: 100%;
   z-index: 2;
 };
 
 .slider-range {
-  background-color: #000;
+  background-color: $accent--dark;
   z-index: 2;
 };
 
 .slider-value {
-  color: #000;
+  //color:;
   font-size: 12px;
   margin-top: 10px;
   width: 100%;
@@ -58,6 +60,11 @@ $thumb-radius: 18px;
   outline: none;
   position: absolute;
 };
+
+.thumb:hover,
+.thumb:focus{
+  background-color:$hover-colour;
+}
 
 .thumb-left {
   z-index: 3;
@@ -81,6 +88,11 @@ $thumb-radius: 18px;
   position: relative;
 }
 
+.thumb::-webkit-slider-thumb:hover,
+.thumb::-webkit-slider-thumb:focus{
+  background-color:$hover-colour;
+}
+
 /* Firefox */
 .thumb::-moz-range-thumb {
   background-color: #fff;
@@ -93,4 +105,9 @@ $thumb-radius: 18px;
   margin-top: 4px;
   pointer-events: all;
   position: relative;
+}
+
+.thumb::-moz-range-thumb:hover,
+.thumb::-moz-range-thumb:focus{
+  background-color: $hover-colour;
 }

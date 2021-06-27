@@ -12,71 +12,68 @@ const CardList = props => {
     const minPrice = props.minPrice;
     const maxPrice = props.maxPrice;
 
-    let show = false;
-
-
     return (
+        <>
+        {products.data.map((product, pos) => {
+            const {documentID, productColour, productImage, productIsMale, productName, productPrice, productSizes} = product;
+            if (!productImage || !productName || 
+            typeof productPrice === 'undefined') return null;
 
-        <div className="card-wrapper">
+            if (gender === "f" && productIsMale) return null;
+            if (gender === "m" && !productIsMale) return null;
 
-            {products.data.map((product, pos) => {
-                const {productColour, productImage, productIsMale, productName, productPrice, productSizes} = product;
-                if (!productImage || !productName || 
-                typeof productPrice === 'undefined') return null;
+            if (colour !== "a" && !productColour.includes(colour)) return null;
 
-                if (gender == "f" && productIsMale) return null;
-                if (gender == "m" && !productIsMale) return null;
+            if (productPrice > maxPrice || productPrice < minPrice) return null;
+            
 
-                if (colour != "a" && !productColour.includes(colour)) return null;
+            let stock = 0;
+            let inSize = true;
 
-                if (productPrice > maxPrice || productPrice < minPrice) return null;
-                
+            if (typeof productSizes !== 'undefined') {
 
-                let stock = 0;
-                let inSize = true;
+                for (let key in productSizes) {
+                    stock += productSizes[key];
+                }   
 
-                if (typeof productSizes !== 'undefined') {
-
-                    for (let key in productSizes) {
-                        stock += productSizes[key];
-                    }   
-
-                    if (size != "a") {
-                        if (productSizes[size] == 0) {
-                            stock = 0
-                            inSize = false;
-                        }
+                if (size !== "a") {
+                    if (productSizes[size] === 0) {
+                        stock = 0
+                        inSize = false;
                     }
                 }
+            }
 
-                return (
-                    <>
-                    {(stock > 0) && (
-                        <Card name={productName} 
-                            price={productPrice} 
-                            image={productImage} 
-                            sizes={productSizes}
-                            colours={productColour}
-                            isMale={productIsMale} 
-                            stock={stock}
-                            inSize={inSize} />
-                    )}
+            return (
+                <>
+                {(stock > 0) && (
+                    <Card name={productName} 
+                        ID={documentID}
+                        price={productPrice} 
+                        image={productImage} 
+                        sizes={productSizes}
+                        colours={productColour}
+                        isMale={productIsMale} 
+                        stock={stock}
+                        inSize={inSize} />
+                )}
 
-                    {(stock == 0) && showOOS && (
-                        <Card name={productName} 
-                            price={productPrice} 
-                            image={productImage} 
-                            sizes={productSizes}
-                            colours={productColour}
-                            isMale={productIsMale}
-                            stock={stock} 
-                            inSize={inSize} />
-                    )}
-                    </>
-                );
-            })}
+                {(stock === 0) && showOOS && (
+                    <Card name={productName} 
+                        ID={documentID}
+                        price={productPrice} 
+                        image={productImage} 
+                        sizes={productSizes}
+                        colours={productColour}
+                        isMale={productIsMale}
+                        stock={stock} 
+                        inSize={inSize} />
+                )}
+                </>
+            );
+        })}
+        </>
 
-        </div>
     );
 };
 

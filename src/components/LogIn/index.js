@@ -15,10 +15,10 @@ class LogIn extends Component {
 
     render() {
         return (
-            <div className="is-fullheight">
+            <div className="account-wrapper is-fullheight">
                 
-                <div className="has-text-centered">
-                    <h3 className=" is-size-3">Log In</h3>
+                <div className="has-text-centered pt-5">
+                    <h3 className=" is-size-1">Log In</h3>
                 </div>
                 
                 <div className="wrapper">

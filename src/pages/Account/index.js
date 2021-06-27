@@ -23,11 +23,11 @@ const AccountInfo = props => {
 
     return (
         <>
-        <h1 className= "is-size-1 has-text-centered">Account</h1>
-        <section>
+        <section className="account-wrapper pt-5">
+            <h1 className= "is-size-1 has-text-centered">Account</h1>
             <div className="wrapper">    
                 <div className={`column ${isMobile ? "is-half" : "is-one-third"}`}>
-                    <div className="box ">
+                    <div className="box">
                         <div className="content">
                             <h6>Account Name:</h6> <h6>{name}</h6>
                         </div>
@@ -37,7 +37,7 @@ const AccountInfo = props => {
                         <div className="content">
                             <h6>Account Created:</h6> <h6>{date}</h6>
                         </div>
-                        <button className="button" onClick={() => auth.signOut()}>
+                        <button className="button button--logout is--active" onClick={() => auth.signOut()}>
                             Log Out
                         </button>
                     </div>

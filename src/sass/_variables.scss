@@ -1,0 +1,85 @@
+// option 1
+
+// $primary--light: #fff;
+// $secondary--light: #dcd6d7;
+// $accent--light: #df1024;
+
+// $primary--dark: #302831;
+// $secondary--dark: #625a67;
+// $accent--dark: #df1024;
+
+
+// option 2
+
+$primary--light: #fff;
+$secondary--light: #f3f3f7;
+$accent--light: #eb5757;
+$text--light: #2f3646;
+
+$primary--dark: #1b202c;
+$secondary--dark: #252b3d;
+$accent--dark: #eb5757;
+$text--dark: #fff;
+
+
+
+
+$primary: $primary--dark;
+$scheme-main: $secondary--dark;
+$text: $text--dark;
+$subtitle-color: $text;
+$danger: $accent--dark;
+$text-strong: $text;
+
+$link-focus-border: white;
+$link-focus: white;
+
+
+// $button-active-color: $accent--dark;
+// $button-active-border-color: $accent--dark; 
+// $button-text-hover-color: $accent--dark; 
+// $link-active: $accent--dark;
+// $link-active-border: $accent--dark;
+// $link-focus: $accent--dark;
+
+.has-background-primary {
+    background-color: $primary--dark !important;
+}
+
+.has-background-secondary {
+    background-color: $secondary--dark !important;
+}
+
+.has-background-accent {
+    background-color: $accent--dark !important;
+}
+
+.has-text--dark {
+    color: $text--dark !important;
+}
+
+.has-text--light {
+    color: $text--light !important;
+}
+
+.has-text--accent {
+    color: $accent--dark !important;
+}
+
+.is--active {
+        border-color: $accent--dark !important;
+        background-color: transparent;
+        color: white !important;
+}
+
+.is--not-active {
+    border-color: white !important;
+    background-color: transparent;
+    color: $primary--dark;
+}
+
+.button:hover,
+.button:focus {
+    color: $accent--dark !important;
+}
+

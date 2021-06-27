@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+
+@import './variables';
+
+
 @import '../../node_modules/bulma/bulma.sass';
 
 // layouts
@@ -17,3 +21,4 @@
 // pages
 @import '../pages/Home/home';
 @import '../pages/Account/account';
+@import '../pages/basket/basket';

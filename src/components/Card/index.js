@@ -9,10 +9,12 @@ const Card = props => {
     const itemPrice = props.price;
     const itemImage = props.image;
     
-    let sizes = props.sizes;
+    //let sizes = props.sizes;
 
     const stock = props.stock;
     const inSize = props.inSize;
+
+    const id = props.ID;
 
     let inStock = false;
 
@@ -27,16 +29,16 @@ const Card = props => {
     }
 
     return (
-        <Link to="/basket">
-            <div className="card">
+        <Link to={`/product:${id}`}>
+            <div className="card has-background-secondary">
                 <div className="card-image">
                     <figure className="image is-4by3">
                         <img src={itemImage} alt="Shoe" />
                     </figure>
                 </div>
-                <div className="card-content">
+                <div className="card-content has-background-secondary">
                     <div className="subtitle left">{itemName}</div>
-                    <div className={`subtitle right ${inStock ? "has-text-black" : "has-text-danger"}`}>{inStock ? `£${itemPrice}` : warningText }</div>
+                    <div className={`subtitle right ${inStock ? "has-text--dark" : "has-text-danger"}`}>{inStock ? `£${itemPrice}` : warningText }</div>
                 </div>
 
             </div>

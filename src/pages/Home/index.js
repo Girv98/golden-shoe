@@ -19,7 +19,7 @@ const Home = props => {
         dispatch(
             fetchProductsStart()
         )
-    }, []);
+    }, [dispatch]);
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
     const [showFilters, setShowFilters] = useState(false);
@@ -32,8 +32,7 @@ const Home = props => {
     const [size, setSize] = useState("a");
 
     const minPriceRef = 0;
-    const maxPriceRef = 100;
-
+    const maxPriceRef = 80;
     const [minPrice, setMinPrice] = useState(minPriceRef);
     const [maxPrice, setMaxPrice] = useState(maxPriceRef);
 
@@ -62,13 +61,13 @@ const Home = props => {
         {}
 
         <section>
-        <div className="buttons is-right">
-            <button className="button" onClick={() => setOOS(!showOOS)}>{showOOS ? "Hide" : "Show"} Unavailable</button>
-            <button className="button" onClick={() => setShowFilters(!showFilters)}>{showFilters ? "Hide" : "Show"} Filters</button>
-            <button className="button mr-6">Sort by Price</button>
-        </div>
+            <div className="buttons is-right mt-3 mb-3">
+                <button className="button is--active mt-0 mb-0" onClick={() => setOOS(!showOOS)}>{showOOS ? "Hide" : "Show"} Unavailable</button>
+                <button className="button is--active mt-0 mb-0 mr-6" onClick={() => setShowFilters(!showFilters)}>{showFilters ? "Hide" : "Show"} Filters</button>
+                {/* <button className="button mr-6">Sort by Price</button> */}
+            </div>
             <div className="home-wrapper columns is-gapless"> 
-                <div className={`filter-wrapper column ${isMobile ? "is-one-quarter" : "is-one-fifth"} ${showFilters ? "" : "is-hidden"}`}>
+                <div className={`filter-wrapper pt-5 column has-background-secondary ${isMobile ? "is-one-quarter" : "is-one-fifth"} ${showFilters ? "" : "is-hidden"}`}>
                     <Filters productsArray={products} 
                             gender={gender}
                             setGender={setGender} 
@@ -84,7 +83,7 @@ const Home = props => {
                             setMaxPrice={setMaxPrice} />
                 </div>
                 
-                <div className="card-wrapper column">
+                <div className="card-wrapper column has-background-primary">
                     <CardList productsArray={products}
                             showOOS={showOOS} 
                             gender={gender} 
