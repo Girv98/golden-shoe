@@ -1,9 +1,16 @@
+body {
+    width: 100%;
+}
+
 .main-body {
     display: flex;
     min-height: 89vh;
+    width: 100%;
+    flex-shrink: 0;
     flex-direction: column;
 }
 
 .main-section {
     flex: 1;
+    //margin-bottom: 1.5rem;
 }

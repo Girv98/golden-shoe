@@ -13,45 +13,60 @@
 
 $primary--light: #fff;
 $secondary--light: #f3f3f7;
-$accent--light: #eb5757;
 $text--light: #2f3646;
 
 $primary--dark: #1b202c;
 $secondary--dark: #252b3d;
-$accent--dark: #eb5757;
 $text--dark: #fff;
 
+$accent: #eb5757;
 
 
+:root {
+    --primary: #1b202c;
+    --secondary: #252b3d;
+    --accent: #eb5757;
+    --text: #fff;
+}
 
-$primary: $primary--dark;
-$scheme-main: $secondary--dark;
-$text: $text--dark;
-$subtitle-color: $text;
-$danger: $accent--dark;
-$text-strong: $text;
+
+$primary: var(--primary);
+$scheme-main: var(--secondary);
+$text: var(--text);
+$danger: var(--accent);
+$text-strong: var(--text);
 
 $link-focus-border: white;
 $link-focus: white;
 
+$background: $secondary--dark;
 
-// $button-active-color: $accent--dark;
-// $button-active-border-color: $accent--dark; 
-// $button-text-hover-color: $accent--dark; 
-// $link-active: $accent--dark;
-// $link-active-border: $accent--dark;
-// $link-focus: $accent--dark;
+.dark {
+    --primary: #1b202c;
+    --secondary: #252b3d;
+    --accent: #eb5757;
+    --text: #fff;
+
+}
+
+.light {
+    --primary: #f3f3f7;
+    --secondary: #fff;
+    --accent: #eb5757;
+    --text: #2f3646;
+}
+
 
 .has-background-primary {
-    background-color: $primary--dark !important;
+    background-color: var(--primary) !important;
 }
 
 .has-background-secondary {
-    background-color: $secondary--dark !important;
+    background-color: var(--secondary) !important;
 }
 
 .has-background-accent {
-    background-color: $accent--dark !important;
+    background-color: var(--accent) !important;
 }
 
 .has-text--dark {
@@ -63,23 +78,41 @@ $link-focus: white;
 }
 
 .has-text--accent {
-    color: $accent--dark !important;
+    color: $accent !important;
+}
+
+.button {
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    margin: 0 0.3rem 0.3rem 0;
+    color: var(--text) !important;
+    text-align: center;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+
+    transition: 150ms ease;
 }
 
 .is--active {
-        border-color: $accent--dark !important;
+        border-color: $accent !important;
         background-color: transparent;
-        color: white !important;
+        color: var(--text) !important;
 }
 
 .is--not-active {
-    border-color: white !important;
+    border-color: var(--text)!important;
     background-color: transparent;
-    color: $primary--dark;
+    color: var(--primary);
 }
 
 .button:hover,
 .button:focus {
-    color: $accent--dark !important;
+    background-color: $accent !important;
+    color: white !important;
+    border-color: transparent !important;
 }
+
 

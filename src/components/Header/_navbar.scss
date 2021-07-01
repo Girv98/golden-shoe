@@ -1,24 +1,64 @@
 
 
-.navbar.has-centered-menu {
-  .navbar-start {
-    flex-grow: 1;
-    justify-content: center;
+
+.wrapper--nav {
+  //margin-bottom: 6rem;
+}
+
+
+.nav {
+  //display: block;
+  min-height: 4rem;
+  background-color: var(--secondary);
+
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+
+  &.is-fixed-top {
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // position: fixed;
+    // z-index: 30;
   }
-}
 
-.button.is-ghost{
-  color: white !important;
+  a {
+    text-decoration: none;
+    color: var(--text);
 
-}
+    &:hover {
+      color: var(--accent);
+    }
+    &:focus {
+      outline: 2px solid var(--accent);
+    }
+  }
 
-.button.is-ghost:hover{
-  color: $accent--dark !important;
-}
+  &__brand {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    min-height: 3.25rem;
+    padding: 0.5rem 0.75rem;
+    position: relative;
+    font-weight: 600;
+    line-height: 1.125;
+    float: left;
+  }
 
-.button:focus{
-  color: $accent--dark !important;
-  // outline: 2px solid $accent--dark;
-  box-shadow: 0 0 0 2px $accent--dark !important;
-  border-color: transparent !important;
+  &__items {
+    display: flex;
+    flex-wrap: no-wrap;
+    justify-content: flex-start;
+    line-height: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    float: right;
+
+
+
+    .nav__items__button {
+      margin: 0.5rem;
+      padding: 0.25rem;
+    }
+  }
 }

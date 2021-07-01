@@ -24,7 +24,7 @@ export const handleFetchProducts = ({filterType, startAfterDoc, persistProducts=
 
     let ref = firestore.collection('products');
 
-    //if (filterType) ref = ref.where('productCategory', '==', filterType);
+    if (filterType) ref = ref.where('productCategory', '==', filterType);
 
     ref
       .get()

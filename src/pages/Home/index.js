@@ -36,6 +36,8 @@ const Home = props => {
     const [minPrice, setMinPrice] = useState(minPriceRef);
     const [maxPrice, setMaxPrice] = useState(maxPriceRef);
 
+    
+
 
     useEffect(() => {
             window.addEventListener("resize", () => {
@@ -58,16 +60,15 @@ const Home = props => {
     return (
 
         <>
-        {}
 
         <section>
-            <div className="buttons is-right mt-3 mb-3">
-                <button className="button is--active mt-0 mb-0" onClick={() => setOOS(!showOOS)}>{showOOS ? "Hide" : "Show"} Unavailable</button>
-                <button className="button is--active mt-0 mb-0 mr-6" onClick={() => setShowFilters(!showFilters)}>{showFilters ? "Hide" : "Show"} Filters</button>
+            <div className="btns">
+                <button className="button is--active" onClick={() => setOOS(!showOOS)}>{showOOS ? "Hide" : "Show"} Unavailable</button>
+                <button className="button is--active" onClick={() => setShowFilters(!showFilters)}>{showFilters ? "Hide" : "Show"} Filters</button>
                 {/* <button className="button mr-6">Sort by Price</button> */}
             </div>
-            <div className="home-wrapper columns is-gapless"> 
-                <div className={`filter-wrapper pt-5 column has-background-secondary ${isMobile ? "is-one-quarter" : "is-one-fifth"} ${showFilters ? "" : "is-hidden"}`}>
+            <div className="home-wrapper"> 
+                <div className={`filter-wrapper has-background-secondary ${showFilters ? "is-shown" : "is-hidden"}`}>
                     <Filters productsArray={products} 
                             gender={gender}
                             setGender={setGender} 

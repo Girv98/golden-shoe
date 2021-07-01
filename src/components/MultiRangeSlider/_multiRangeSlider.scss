@@ -2,8 +2,7 @@
 
 $width: 80%;
 $thumb-radius: 18px;
-
-$hover-colour: $accent--dark;
+$hover-colour: var(--accent);
 
 
 .container {
@@ -30,20 +29,19 @@ $hover-colour: $accent--dark;
 };
 
 .slider-track {
-  background-color: $primary--dark;
+  background-color: var(--primary);
   width: 100%;
   z-index: 2;
 };
 
 .slider-range {
-  background-color: $accent--dark;
+  background-color: var(--accent);
   z-index: 2;
 };
 
 .slider-value {
-  //color:;
-  font-size: 12px;
-  margin-top: 10px;
+  font-size: 14px;
+  margin-top: 0.75rem;
   width: 100%;
 };
 
@@ -59,12 +57,12 @@ $hover-colour: $accent--dark;
   width: $width;
   outline: none;
   position: absolute;
-};
 
-.thumb:hover,
-.thumb:focus{
-  background-color:$hover-colour;
-}
+  &:hover,
+  &:focus {
+    background-color: $hover-colour;
+  }
+};
 
 .thumb-left {
   z-index: 3;
@@ -83,14 +81,18 @@ $hover-colour: $accent--dark;
   cursor: pointer;
   height: $thumb-radius;
   width: $thumb-radius;
-  margin-top: 4px;
+  margin-top: 1px;
   pointer-events: all;
   position: relative;
+
+  &:hover {
+    background-color: $hover-colour;
+  }
+
 }
 
-.thumb::-webkit-slider-thumb:hover,
-.thumb::-webkit-slider-thumb:focus{
-  background-color:$hover-colour;
+.thumb:focus::-webkit-slider-thumb {
+  background-color: $hover-colour;
 }
 
 /* Firefox */
@@ -105,9 +107,12 @@ $hover-colour: $accent--dark;
   margin-top: 4px;
   pointer-events: all;
   position: relative;
+
+  &:hover {
+    background-color: $hover-colour;
+  }
 }
 
-.thumb::-moz-range-thumb:hover,
-.thumb::-moz-range-thumb:focus{
+.thumb:focus::-moz-range-thumb{
   background-color: $hover-colour;
 }

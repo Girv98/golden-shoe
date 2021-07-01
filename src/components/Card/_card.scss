@@ -1,38 +1,81 @@
+a:link {
+    text-decoration: none !important;
+}
 
-.card {
-    min-width: 300px;
-    margin: 1rem;
 
-    .card-content {
-        display: flex !important;
-        flex-direction: row !important;
+.crd {
+    min-width: 35ch;
+    max-width: 80ch;
+    color: var(--text);
+    background-color: var(--secondary);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    
+
+    .card--image {
         width: 100%;
-        justify-content: space-between !important;
+        height: auto;
     }
 
-    transition: 150ms cubic-bezier(.21,1.06,.81,1.01);
+    .card--content {
+        padding: 0 1.5rem !important;
+
+        .card--title {
+            position: relative;
+            width: intrinsic;
+            width: -moz-max-content;
+            width: -webkit-max-content;
+            width: max-content;
+            margin: 0.83rem !important;
+            text-decoration: none !important;
+            
+            &::after {
+                content: "";
+				position: absolute;
+				height: 4px;
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				background: var(--accent);
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: transform 300ms ease;
+            }
+        }
+
+        .card--price {
+            margin: 0.83rem !important;
+        }
+
+
+    }
+
+    transition: transform 300ms ease;
+    transition: background 1000ms ease-in-out;
+    transition: color 0.01ms ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+    &:focus {
+        outline: 2px solid var(--accent);
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
-.card:hover,
-.card:focus {
+.crd:hover .card--title::after,
+a:focus .crd .card--title::after {
+	transform: scaleX(1);
+}
+
+a:focus .crd {
+    //outline: 2px solid var(--accent);
     transform: scale(1.05);
-    //background-color: white;
 }
 
-
-
-@media screen and (max-width: 700px) {
-    .card {
-        width: 80vw !important;
-        margin: 1rem 0rem 1rem 0rem;
-        justify-content: space-between !important;
-    }
+a, a:link {
+    outline: none;
 }
 
-@media screen and (max-width: 550px) {
-    .card {
-        width: 80vw !important;
-        margin: 1rem 0rem 1rem 0rem;
-        justify-content: space-between !important;
-    }
-}

@@ -30,15 +30,11 @@ const Card = props => {
 
     return (
         <Link to={`/product:${id}`}>
-            <div className="card has-background-secondary">
-                <div className="card-image">
-                    <figure className="image is-4by3">
-                        <img src={itemImage} alt="Shoe" />
-                    </figure>
-                </div>
-                <div className="card-content has-background-secondary">
-                    <div className="subtitle left">{itemName}</div>
-                    <div className={`subtitle right ${inStock ? "has-text--dark" : "has-text-danger"}`}>{inStock ? `£${itemPrice}` : warningText }</div>
+            <div className="crd has-background-secondary">
+                <img className="card--image" src={itemImage} alt="Shoe" />
+                <div className="card--content">
+                    <h2 className="card--title">{itemName}</h2>
+                    <h3 className={`card--price ${inStock ? "" : "has-text--accent"}`}>{inStock ? `£${itemPrice}` : warningText }</h3>
                 </div>
 
             </div>

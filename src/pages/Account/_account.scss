@@ -1,11 +1,11 @@
 
 .account-wrapper {
-    background-color: $primary--dark !important;
+    background-color: var(--primary) !important;
 }
 
 
 .box {
-    background-color: $secondary--dark !important;
+    background-color: var(--secondary) !important;
 
 }
 .content {
@@ -18,4 +18,9 @@
 
 .button--logout {
     width:100%;
+
+    &:hover {
+        background-color: var(--accent);
+        color: white !important;
+    }
 }

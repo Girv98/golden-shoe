@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faShoppingBag, faMoon, faAdjust} from '@fortawesome/free-solid-svg-icons';
 
 
-function Header() {
+const Header = props => {
     
     const [open, setOpen] = useState(false)
     const burgerToggle = () => {
@@ -12,50 +12,27 @@ function Header() {
 
 
     return (
-        <section className="section">
-        <nav className = "navbar is-fixed-top has-centered-menu">
-            <div className = "navbar-brand">
-                <a className="navbar-item" href="/">
-                    <h1 className="title is-5"> Golden Shoe </h1>
-                </a>
-
-                <div className={`navbar-burger ${open ? "is-active" : ""}`} onClick={burgerToggle}>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </div>
-            </div>
-
-            <div id = "navbarBasicExample" className = {`navbar-menu  ${open ? "is-active" : ""}`}>
-                <div className="navbar-start">
-                    {/* <div className="navbar-item">
-                        Products
-                    </div>
-
-                    <div className="navbar-item">
-                        About
-                    </div>
-                    <div className="navbar-item">
-                        Contact
-                    </div> */}
-                    
+        <div className="wrapper--nav">
+            <nav className = "nav is-fixed-top ">
+                <div className = "nav__brand">
+                    <a href="/">
+                        <h3 className="is-5"> Golden Shoe </h3>
+                    </a>
                 </div>
 
-                <div className="navbar-end">
-                    <div className="navbar-item">
-                        <div className="buttons">
-                            <a className="button is-ghost" href="/account" title="Account">
-                                <FontAwesomeIcon icon={faUser} size="2x"/>
-                            </a>
-                            <a className="button is-ghost" href="/basket" title="Basket">
-                                <FontAwesomeIcon icon={faShoppingBag} size="2x"/>
-                            </a>
-                        </div>
-                    </div>
+                <div className = "nav__items" >
+                    <a className="nav__items__button" href="/account" title="Account">
+                        <FontAwesomeIcon icon={faUser} size="2x"/>
+                    </a>
+                    <a className="nav__items__button" href="/basket" title="Basket">
+                        <FontAwesomeIcon icon={faShoppingBag} size="2x"/>
+                    </a>
+                    <a className="nav__items__button" onClick={() => props.setIsDark(!props.isDark)}>
+                        <FontAwesomeIcon icon={faMoon} size="2x"/>
+                    </a>
                 </div>
-            </div>
-        </nav>
-        </section>
+            </nav>
+        </div>
     );
 };
 
