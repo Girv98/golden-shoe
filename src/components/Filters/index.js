@@ -36,11 +36,11 @@ const Filters = props =>  {
             <div className="buttons buttons__size-colour is-centered mb-5">
                 <button className={`button ${props.colour === "a" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("a")}>All</button>
                 <div>
-                    <button className={`button ${props.colour === "black" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("black")}>Black</button>
-                    <button className={`button ${props.colour === "blue" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("blue")}>Blue</button>
-                    <button className={`button ${props.colour === "brown" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("brown")}>Brown</button>
-                    <button className={`button ${props.colour === "white" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("white")}>White</button>
-                    <button className={`button ${props.colour === "red" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("red")}>Red</button>
+                    <button className={`button black ${props.colour === "black" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("black")}>Black</button>
+                    <button className={`button blue ${props.colour === "blue" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("blue")}>Blue</button>
+                    <button className={`button brown ${props.colour === "brown" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("brown")}>Brown</button>
+                    <button className={`button white ${props.colour === "white" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("white")}>White</button>
+                    <button className={`button red ${props.colour === "red" ? "is--active" : "is--not-active"}`} onClick={() => props.setColour("red")}>Red</button>
                 </div>
             </div>
         </div>

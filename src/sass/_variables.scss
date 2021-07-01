@@ -44,8 +44,15 @@ $background: $secondary--dark;
 .dark {
     --primary: #1b202c;
     --secondary: #252b3d;
+
+    // --primary: #14181b;
+    // --secondary: #2b2e34;
+
     --accent: #eb5757;
     --text: #fff;
+
+    // bg: #14181b
+    // card #2b2e34
 
 }
 
@@ -59,14 +66,17 @@ $background: $secondary--dark;
 
 .has-background-primary {
     background-color: var(--primary) !important;
+    transition: background-color 500ms ease-in-out;
 }
 
 .has-background-secondary {
     background-color: var(--secondary) !important;
+    transition: background-color 500ms ease-in-out;
 }
 
 .has-background-accent {
     background-color: var(--accent) !important;
+    //transition: background-color 500ms ease-in-out;
 }
 
 .has-text--dark {
@@ -92,21 +102,77 @@ $background: $secondary--dark;
 
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 
     transition: 150ms ease;
 }
 
 .is--active {
         border-color: $accent !important;
-        background-color: transparent;
-        color: var(--text) !important;
+        border: none;
+        
+        
+        
+        background-color: var(--accent);
+        color: white !important;
 }
 
 .is--not-active {
     border-color: var(--text)!important;
-    background-color: transparent;
-    color: var(--primary);
+    background-color: var(--secondary);
+    border: none;
+    color: var(--text);
 }
+
+
+button.blue {
+    &.is--active {
+        background-color: #497dc7 !important;
+    }
+    
+    &:hover,
+    &:focus {
+        background-color: #497dc7 !important;
+    }
+}
+
+button.brown {
+    &.is--active {
+        background-color: #6b5047 !important;
+    }
+    
+    &:hover,
+    &:focus {
+        background-color: #6b5047 !important;
+    }
+}
+
+button.white {
+    &.is--active {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    &:hover,
+    &:focus {
+        background-color: white !important;
+        color: black !important;
+    }
+}
+
+button.black {
+    &.is--active {
+        background-color: black !important;
+        color: white;
+    }
+    
+    &:hover,
+    &:focus {
+        background-color: black !important;
+        color: white !important;
+    }
+}
+
 
 .button:hover,
 .button:focus {

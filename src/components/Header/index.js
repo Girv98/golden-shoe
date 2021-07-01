@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser, faShoppingBag, faMoon, faAdjust} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faShoppingBag, faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 
 
 const Header = props => {
@@ -27,8 +27,8 @@ const Header = props => {
                     <a className="nav__items__button" href="/basket" title="Basket">
                         <FontAwesomeIcon icon={faShoppingBag} size="2x"/>
                     </a>
-                    <a className="nav__items__button" onClick={() => props.setIsDark(!props.isDark)}>
-                        <FontAwesomeIcon icon={faMoon} size="2x"/>
+                    <a className="nav__items__button" href="#" onClick={() => props.setIsDark(!props.isDark)}>
+                        <FontAwesomeIcon icon={props.isDark ? faSun : faMoon } size="2x"/>
                     </a>
                 </div>
             </nav>

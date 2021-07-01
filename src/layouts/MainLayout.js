@@ -8,7 +8,7 @@ const MainLayout = props => {
     const [isDark, setIsDark] = useState(true);
 
     return (
-        <div className={`${isDark ? "dark" : "light"}`}>
+        <div className={`colour-wrapper ${isDark ? "dark" : "light"}`}>
             <Header isDark={isDark} setIsDark={setIsDark} />
             <div className="main-body">
                 <div className="main-section">

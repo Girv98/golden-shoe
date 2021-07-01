@@ -1,25 +1,32 @@
 body {
     margin: 0;
+
+    
+}
+
+.colour-wrapper {
+    
 }
 
 
 .btns {
     height: 100%;
     width: 100%;
-    padding: 1rem 2rem ;
+    padding: 2rem 2rem 1rem 2rem;
     margin: 0;
 
     display: flex;
     justify-content: flex-end;
-    background-color: var(--secondary);
-
+    background-color: var(--primary);
+    transition: background-color 500ms ease-in-out;
 
     //margin-right: 1rem;
 
     .button {
         //display: inline-block;
-
     }
+
+    
 }
 
 .home-wrapper {
@@ -36,14 +43,18 @@ body {
     // margin-left: 1rem;
     // margin-bottom: 12px;
 
-    padding: 0.5rem;
+    padding: .5rem;
+    //padding-left: 1rem;
     position: relative;
     font-family: "Roboto", sans-serif;
     color: var(--text);
+    background-color: var(--primary) !important;
 
     display: flex;
     flex-direction: column;
     text-align: center;
+
+    
 }
 
 
@@ -54,6 +65,8 @@ body {
     font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: center;
+
+    transition: background-color 500ms ease-in-out;
 }
 
 
