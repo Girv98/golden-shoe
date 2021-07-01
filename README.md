@@ -39,9 +39,9 @@ This will automatically open your browser at `localhost:3000`
 
 - Responsive design (DONE)
 - Card grid of products (DONE)
-- Shoe size picker 
+- Shoe size picker (DONE, TODO in Product Page)
 - Size Guide
-- Filtering by gender, price, size & colour and out-of-stock
+- Filtering by gender, price, size & colour and out-of-stock (DONE)
 - Shows out-of-stock shoes as such (DONE)
 - User Log In & Sign Up (DONE)
 - Fully functional basket
@@ -50,9 +50,10 @@ This will automatically open your browser at `localhost:3000`
 - Search Bar
 - Checkout
 - Vouchers
+- Admin
 - Returns Process
 - View of shoes in multiple colours
-- Social Media Icons
+- Social Media share links
 
 
 
