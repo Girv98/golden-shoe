@@ -67,8 +67,8 @@ const Home = props => {
                 <button className="button is--active" onClick={() => setShowFilters(!showFilters)}>{showFilters ? "Hide" : "Show"} Filters</button>
                 {/* <button className="button mr-6">Sort by Price</button> */}
             </div>
-            <div className="home-wrapper"> 
-                <div className={`filter-wrapper has-background-secondary ${showFilters ? "is-shown" : "is-hidden"}`}>
+            <div className={`home-wrapper ${showFilters ? "" : "is--hidden"}`}> 
+                <div className={`filter-wrapper has-background-secondary ${showFilters ? "" : "is--hidden"}`}>
                     <Filters productsArray={products} 
                             gender={gender}
                             setGender={setGender} 
