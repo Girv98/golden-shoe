@@ -47,7 +47,8 @@ const CardList = props => {
             return (
                 <>
                 {(stock > 0) && (
-                    <Card name={productName} 
+                    <Card key={pos}
+                        name={productName} 
                         ID={documentID}
                         price={productPrice} 
                         image={productImage} 
@@ -59,7 +60,8 @@ const CardList = props => {
                 )}
 
                 {(stock === 0) && showOOS && (
-                    <Card name={productName} 
+                    <Card key={pos}
+                        name={productName} 
                         ID={documentID}
                         price={productPrice} 
                         image={productImage} 

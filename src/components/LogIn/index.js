@@ -15,29 +15,21 @@ class LogIn extends Component {
 
     render() {
         return (
-            <div className="account-wrapper is-fullheight">
-                
-                <div className="has-text-centered pt-5">
-                    <h3 className=" is-size-1">Log In</h3>
-                </div>
-                
-                <div className="wrapper">
-                    <div className="columns is-centered">
-                        <div className="column is-5-tablet is-4-desktop is-3-widescreen">
-                            <form className="box" onSubmit={this.handleSubmit}>
-                                <div className="field">
-                                    <button className="button is-fullwidth" onClick={signInWithGoogle}>
-                                        <span className="icon">
-                                            <FontAwesomeIcon icon={faGoogle} size="1x"/>
-                                        </span>
-                                        <span>Sign in with Google</span>
-                                    </button>
-                                </div>
-                            </form>
+            <section className="account-wrapper">
+                <h1>Log In</h1>
+                <div className="account-grid">
+                    <form className="box box--sign-in" onSubmit={this.handleSubmit}>
+                        <div className="field">
+                            <button className="button is--active button--sign-in" onClick={signInWithGoogle}>
+                                <span>
+                                    <FontAwesomeIcon icon={faGoogle} size="1x"/>
+                                </span>
+                                <span> Sign in with Google</span>
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </div>
+            </section>
         );
 
     }

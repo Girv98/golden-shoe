@@ -1,5 +1,5 @@
 //import './sass/mystyles.scss';
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom';
 import { auth, handleUserProfile } from './firebase/utils';
@@ -42,9 +42,8 @@ class App extends Component {
 
   
   
-
   render() {  
-    
+
     return (
       <div className="App">
         <Switch>

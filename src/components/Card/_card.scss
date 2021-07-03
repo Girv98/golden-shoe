@@ -51,7 +51,7 @@ a:link {
     }
 
     transition: transform 300ms ease;
-    transition: background 1000ms ease-in-out;
+    transition: background-color $color-anim-time ease;
     transition: color 0.01ms ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 

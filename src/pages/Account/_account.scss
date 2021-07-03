@@ -1,12 +1,29 @@
 
 .account-wrapper {
+    font-family: "Roboto", sans-serif;
     background-color: var(--primary) !important;
+    color: var(--text);
+    overflow: hidden;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2rem;
+
+    transition: $color-anim-time ease;
 }
 
+.account-grid {
+    display: flex;
+    justify-content: center;
+}
 
 .box {
     background-color: var(--secondary) !important;
-
+    padding: 1rem;
+    margin: 1rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: $color-anim-time ease;
 }
 .content {
     display: flex !important;
@@ -18,9 +35,21 @@
 
 .button--logout {
     width:100%;
+}
 
-    &:hover {
-        background-color: var(--accent);
-        color: white !important;
+@media (min-width: 600px) {
+    .box {
+        padding: 3rem;
+        margin: 3rem;
+        max-width: 600px;
+    }
+}
+
+
+@media (min-width: 550px) {
+    .box {
+        padding: 2rem;
+        margin: 2rem;
+        width: 80%;
     }
 }

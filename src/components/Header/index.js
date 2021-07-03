@@ -16,7 +16,7 @@ const Header = props => {
             <nav className = "nav is-fixed-top ">
                 <div className = "nav__brand">
                     <a href="/">
-                        <h3 className="is-5"> Golden Shoe </h3>
+                        <h3> Golden Shoe </h3>
                     </a>
                 </div>
 

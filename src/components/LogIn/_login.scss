@@ -1,14 +1,9 @@
 
 
-.wrapper {
-    display: flex;
-    height: 70vh !important;
-    align-items: center;
-    justify-content: center;
-    
+.box--sign-in {
+    max-width: 320px !important;
+}
 
-    .columns .column {
-        width: 100%;
-        
-    }
+.button--sign-in {
+    width:100%;
 }

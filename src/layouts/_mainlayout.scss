@@ -4,13 +4,15 @@ body {
 
 .main-body {
     display: flex;
-    min-height: 89vh;
+    min-height: 92vh;
     width: 100%;
     flex-shrink: 0;
     flex-direction: column;
+    background-color: var(--primary);
+    transition: background-color $color-anim-time ease;
 }
 
 .main-section {
     flex: 1;
-    //margin-bottom: 1.5rem;
+    
 }

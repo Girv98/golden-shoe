@@ -22,29 +22,25 @@ const AccountInfo = props => {
     const date = currentUser.createdDate && (currentUser.createdDate).toDate().toDateString();
 
     return (
-        <>
-        <section className="account-wrapper pt-5">
-            <h1 className= "is-size-1 has-text-centered">Account</h1>
-            <div className="wrapper">    
-                <div className={`column ${isMobile ? "is-half" : "is-one-third"}`}>
-                    <div className="box">
-                        <div className="content">
-                            <h6>Account Name:</h6> <h6>{name}</h6>
-                        </div>
-                        <div className="content">
-                            <h6>Email:</h6> <h6>{email}</h6>
-                        </div>
-                        <div className="content">
-                            <h6>Account Created:</h6> <h6>{date}</h6>
-                        </div>
-                        <button className="button button--logout is--active" onClick={() => auth.signOut()}>
-                            Log Out
-                        </button>
+        <section className="account-wrapper">
+            <h1>Account</h1>
+            <div className="account-grid" >    
+                <div className="box">
+                    <div className="content">
+                        <h4>Account Name:</h4> <h4>{name}</h4>
                     </div>
+                    <div className="content">
+                        <h4>Email:</h4> <h4>{email}</h4>
+                    </div>
+                    <div className="content">
+                        <h4>Account Created:</h4> <h4>{date}</h4>
+                    </div>
+                    <button className="button button--logout is--active" onClick={() => auth.signOut()}>
+                        Log Out
+                    </button>
                 </div>
             </div>
         </section>
-        </>
     );
 }
 

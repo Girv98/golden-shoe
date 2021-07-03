@@ -4,11 +4,6 @@ body {
     
 }
 
-.colour-wrapper {
-    
-}
-
-
 .btns {
     height: 100%;
     width: 100%;
@@ -18,13 +13,10 @@ body {
     display: flex;
     justify-content: flex-end;
     background-color: var(--primary);
-    transition: background-color 500ms ease-in-out;
+    transition: background-color $color-anim-time ease;
 
     //margin-right: 1rem;
 
-    .button {
-        //display: inline-block;
-    }
 
     
 }
@@ -34,7 +26,7 @@ body {
     grid-template-columns: 1fr 3fr;
     width: 100%;
 
-    transition: 100ms ease;
+    transition: $color-anim-time ease;
 
     &.is--hidden {
         grid-template-columns: 1fr;
@@ -79,7 +71,7 @@ body {
     display: flex;
     justify-content: center;
 
-    transition: background-color 500ms ease-in-out;
+    transition: background-color $color-anim-time ease;
 }
 
 

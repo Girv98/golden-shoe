@@ -1,11 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Header from './../components/Header';
 import Footer from './../components/Footer';
 
 const MainLayout = props => {
 
-    const [isDark, setIsDark] = useState(true);
+    const storedDarkMode = JSON.parse(localStorage.getItem("DARK_MODE"));
+
+    const [isDark, setIsDark] = useState(storedDarkMode);
+
+    useEffect(() => {
+        localStorage.setItem("DARK_MODE", JSON.stringify(isDark));
+      }, [isDark]);
 
     return (
         <div className={`colour-wrapper ${isDark ? "dark" : "light"}`}>
