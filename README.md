@@ -10,12 +10,11 @@ Demo e-commerce website for AND Digital
 
 This project has the following dependancies:
 
-- React
+- React (w/ Redux, DOM, Router)
 - Node-Sass
 - Firebase
-- Bulma
+- Bulma (TO BE REMOVED)
 - FontAwesome
-- Redux
 - GraphQL (TODO)
 
 
