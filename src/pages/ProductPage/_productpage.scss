@@ -1,44 +1,179 @@
-.product-wrapper {
+.wrapper--product {
     font-family: "Roboto", sans-serif;
     overflow: hidden;
     // text-align: center;
     padding: 2rem;
     color: var(--text);
     display: grid;
+
     grid-template-areas: 
-                "b a a a a a a a a" 
-                "c c c c c c c c c";
+                "a a"
+                "b b"
+                "c c" 
+                "d d";
 
-    gap: 2rem;
+    gap: 1rem;
 
 
-    .product-info {
+    .product--info {
         grid-area: a;
-        justify-self: stretch;
-        //text-align: center;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        line-height: 2rem;
+
+        .product--name {
+            //justify-self: left;
+            margin: 0;
+            padding: 1rem;
+        }
         
+        .product--price {
+            //justify-self: right;
+            margin: 0;
+            margin-left: auto;
+            padding: 1rem;
+        
+        }
+    }
+    
+    .wrapper--image {
+        grid-area: b;
+        max-width: 100%;
+        justify-self: center;
+        
+        .product--image {
+            max-width: 100%;
+        }
+    }
+
+    .product--options{
+        grid-area: c;
+
+        .wrapper--size {
+            text-align: center;
+            //text-align: justify;
+            padding: 2rem;
+            
+            .size__title {
+                padding:2rem;
+                .title--left {
+                    float: left;
+                    padding: 0;
+                    margin: 0;
+                }
+                .title--right {
+                    float: right;
+                    
+                    text-decoration: none;
+                    color: var(--text);
+                    
+                    &:hover {
+                        color: var(--accent);
+                    }
+                    &:focus {
+                        outline: 2px solid var(--accent);
+                    }
+                }
+            }
+        }
+
         .add--button {
             width: 100%;
             justify-self: center;
         }
     }
+}
+
+
+.modal {
+    //display: none;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(var(--modal-bg),0.25);
     
-    .image-wrapper {
-        grid-area: b;
-        overflow: hidden;
-        max-width: 100%;
-        justify-self: center;
-        
-        .product-image {
-            max-width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    
+    &:target {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    & > div {
+        width: 80%;
+        height: 40%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2em;
+        background: var(--secondary);
+    }
+
+    a {
+        float: right;
+        color: var(--text);
+
+        &:hover {
+            color: var(--accent);
+        }
+        &:focus {
+            outline: 2px solid var(--accent);
+        }
+    }
+    
+}
+
+
+
+// @media (min-width: 1000px) {
+//     .product--options {
+//         min-width: 30vw;
+//     }
+// }
+
+
+
+@media (min-width: 1050px) {
+    .wrapper--product {
+        grid-template-areas: 
+                "b b a a"
+                "b b c c"
+                "b b c c" 
+                "d d d d";
+    }
+
+    .product--info {
+        flex-direction: column !important;
+
+        .product--price {
+            //justify-self: left;
+            margin: 0 !important;
         }
     }
 
-    .input-wrapper {
-        text-align: center;
-        //justify-items: stretch !important;
-        text-align: justify;
-        padding: 2rem;
+    .product--options {
+        min-width: 35vw;
     }
-}
 
+    .wrapper--image {
+        max-width: 50vw !important;
+    }
+
+    .buttons__size-colour {
+        //max-width: 420px !important;
+    }
+
+
+
+}
