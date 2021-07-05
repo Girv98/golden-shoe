@@ -62,7 +62,7 @@ class App extends Component {
               <Account />
             </MainLayout>
           )} />
-          <Route exact path="/product:productID" render={() => (
+          <Route exact path="/product/:productID" render={() => (
             <MainLayout>
               <ProductPage />
             </MainLayout>

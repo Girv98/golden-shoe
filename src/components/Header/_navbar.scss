@@ -1,11 +1,5 @@
 
 
-
-.wrapper--nav {
-  //margin-bottom: 6rem;
-}
-
-
 .nav {
   //display: block;
   min-height: 4rem;
@@ -63,6 +57,22 @@
     .nav__items__button {
       margin: 0.5rem;
       padding: 0.25rem;
+
+      text-decoration: none;
+      color: var(--text);
+
+      background-color: transparent;
+      border: none;
+
+      font: inherit;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--accent);
+      }
+      &:focus {
+        outline: 2px solid var(--accent);
+      }
     }
   }
 }

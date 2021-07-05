@@ -29,7 +29,7 @@ const Card = props => {
     }
 
     return (
-        <Link to={`/product:${id}`}>
+        <Link to={`/product/${id}`}>
             <div className="crd has-background-secondary">
                 <img className="card--image" src={itemImage} alt="Shoe" />
                 <div className="card--content">

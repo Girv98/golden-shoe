@@ -9,7 +9,7 @@ import LogIn from './../../components/LogIn';
 const BasketInfo = props => {
     return (
         <>
-            <section className="account-wrapper pt-5">
+            <section className="account-wrapper">
                 <h1 className= "is-size-1 has-text-centered">Basket</h1>
                 <div className="content-wrapper">
                 <div className="columns">

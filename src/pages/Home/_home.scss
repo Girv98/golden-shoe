@@ -52,13 +52,19 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    
 
 
     &.is--hidden {
         display: none;
     }
 
-    
+    .size-buttons--home {
+        max-width: 250px !important;
+        width: 100%;
+        text-align: center;
+        align-self: center;
+    }
 }
 
 }

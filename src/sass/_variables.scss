@@ -47,14 +47,8 @@ $background: $secondary--dark;
     --primary: #1b202c;
     --secondary: #252b3d;
 
-    // --primary: #14181b;
-    // --secondary: #2b2e34;
-
     --accent: #eb5757;
     --text: #fff;
-
-    // bg: #14181b
-    // card #2b2e34
 
 }
 
@@ -180,8 +174,12 @@ button.black {
     border-color: transparent !important;
 }
 
+.button:disabled {
+    opacity: 60%;
+}
+
 .button:focus {
-    outline: 2px solid white;
+    outline: 2px solid var(--text);
 }
 
 

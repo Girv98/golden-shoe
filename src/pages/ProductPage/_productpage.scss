@@ -1,0 +1,44 @@
+.product-wrapper {
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    // text-align: center;
+    padding: 2rem;
+    color: var(--text);
+    display: grid;
+    grid-template-areas: 
+                "b a a a a a a a a" 
+                "c c c c c c c c c";
+
+    gap: 2rem;
+
+
+    .product-info {
+        grid-area: a;
+        justify-self: stretch;
+        //text-align: center;
+        
+        .add--button {
+            width: 100%;
+            justify-self: center;
+        }
+    }
+    
+    .image-wrapper {
+        grid-area: b;
+        overflow: hidden;
+        max-width: 100%;
+        justify-self: center;
+        
+        .product-image {
+            max-width: 100%;
+        }
+    }
+
+    .input-wrapper {
+        text-align: center;
+        //justify-items: stretch !important;
+        text-align: justify;
+        padding: 2rem;
+    }
+}
+
