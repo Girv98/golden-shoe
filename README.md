@@ -38,8 +38,8 @@ This will automatically open your browser at `localhost:3000`
 
 - Responsive design (DONE)
 - Card grid of products (DONE)
-- Shoe size picker (DONE, TODO in Product Page)
-- Size Guide
+- Shoe size picker (DONE)
+- Size Guide (Logic DONE, content to be added)
 - Filtering by gender, price, size & colour and out-of-stock (DONE)
 - Shows out-of-stock shoes as such (DONE)
 - User Log In & Sign Up (DONE)

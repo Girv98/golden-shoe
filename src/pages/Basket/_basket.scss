@@ -1,3 +1,41 @@
 .content-wrapper {
     min-height: 70vh !important;
 }
+
+
+.cart {
+    max-width: 100rem;
+    margin: 0 auto;
+    
+    table {
+        width: 100%;
+    }
+
+    &, 
+    &__header {
+        //border-bottom: 1px solid var(--text);
+        width: 100%;
+        text-align: left;
+
+        th,
+        td {
+            width: 10%;
+        }
+    }
+
+    &__item {
+        td img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        cursor: pointer;
+    }
+    
+    h1, p {
+        text-align: center;
+    }
+}
+

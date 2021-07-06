@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch , useSelector } from 'react-redux';
 import { fetchProductStart, setProduct } from './../../redux/Products/products.actions';
+import { addProduct } from './../../redux/Cart/cart.actions';
 
 import SizeButtons from './../../components/SizeButtons';
 
@@ -12,6 +13,7 @@ const mapState = state => ({
 
 const ProductPage = props => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const { productID } = useParams();
     const { product } = useSelector(mapState);
@@ -61,6 +63,15 @@ const ProductPage = props => {
     //     history.push('/cart');
     //   }
 
+    const handleAddToCart = (product, size) => {
+      if (!product) return;
+
+      dispatch(
+        addProduct([product, size])
+      );
+      history.push('/basket');
+    }
+
     //console.log(product)
 
     return (
@@ -93,7 +104,7 @@ const ProductPage = props => {
               <SizeButtons size={size} setSize={setSize} />
             </div>
 
-            <button className={`button add--button ${buyable ? "is--active" : "is--not-active"}`} disabled={!buyable} title={`${buyable ? "Add to bag" : "Please choose available size"}`}>
+            <button className={`button add--button ${buyable ? "is--active" : "is--not-active"}`} disabled={!buyable} title={`${buyable ? "Add to bag" : "Please choose available size"}`} onClick={() => handleAddToCart(product, size)}>
               {buyable &&
               "Add to Bag" 
               }
