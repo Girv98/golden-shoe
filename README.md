@@ -15,7 +15,7 @@ This project has the following dependancies:
 - Firebase
 - Bulma (TO BE REMOVED)
 - FontAwesome
-- GraphQL (TODO)
+
 
 
 After cloning the repo, navigate to the root of the folder in a terminal and run the following command:
@@ -53,6 +53,7 @@ This will automatically open your browser at `localhost:3000`
 - Returns Process
 - View of shoes in multiple colours
 - Social Media share links
+- GraphQL
 
 
 
