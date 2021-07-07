@@ -3,7 +3,7 @@ export const existingCartItem = ({
     nextCartItem
   }) => {
     return prevCartItems.find(
-      cartItem => cartItem.documentID === nextCartItem.documentID && cartItem[1] === nextCartItem[1]
+      cartItem => cartItem[0].documentID === nextCartItem[0].documentID && cartItem[1] === nextCartItem[1]
     );
   };
   
@@ -15,6 +15,8 @@ export const existingCartItem = ({
     const cartItemExists = existingCartItem({ prevCartItems, nextCartItem });
   
     if (cartItemExists) {
+
+      console.log(nextCartItem[1])
       return prevCartItems.map(cartItem =>
         (cartItem.documentID === nextCartItem.documentID && cartItem[1] === nextCartItem[1])
           ? {
@@ -37,7 +39,7 @@ export const existingCartItem = ({
     prevCartItems,
     cartItemToRemove
   }) => {
-    return prevCartItems.filter(cartItem => cartItem[0].documentID !== cartItemToRemove.documentID && cartItem[1] !== cartItemToRemove[1]);
+    return prevCartItems.filter(cartItem => cartItem[0].documentID !== cartItemToRemove[0].documentID || cartItem[1] !== cartItemToRemove[1]);
   }
   
   export const handleReduceCartItem = ({

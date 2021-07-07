@@ -6,6 +6,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 .cart {
@@ -87,6 +88,7 @@
         align-self: center;
         width: 100%;
         text-align: left;
+        padding: 1rem;
 
     }
     
@@ -97,12 +99,14 @@
         align-self: center;
         width: 100%;
         text-align: left;
+        padding: 0 1rem 0 0;
     }
     
     h1, h2, h3, h4 {
         margin: 0 !important;
 
     }
+
     &__info {
         grid-area: i;
         justify-self: center;
@@ -110,6 +114,7 @@
         //padding: 0 0 5rem;
         width: 100%;
         text-align: left;
+        padding: 0 1rem;
 
         .basket--left {
             //float: left;
@@ -185,18 +190,25 @@
         &__image-wrapper {
             max-width: 20vw;
         }   
+
+        &__name,
+        &__price,
+        &__info {
+            padding: auto;
+        }
+
+        &__price {
+            text-align: center;
+        }
+
     }
 
     .info {
         width: 100%;
-        //align-content: center !important;
-        //justify-content: center !important;
-        //justify-self: center !important;
-        //text-align: center !important;
-
+        align-content: center !important;
         .summary {
             max-width: 50%;
-            margin: 1rem auto;
+            margin: 5rem auto 1rem auto;
             
             border-radius: 0.5rem;
         }
