@@ -21,8 +21,6 @@ export const existingCartItem = ({
             ...cartItem,
             quantity: cartItem.quantity + quantityIncrement
           } : cartItem
-          
-        
       );
     }
   
@@ -47,18 +45,14 @@ export const existingCartItem = ({
     cartItemToReduce
   }) => {
     const existingCartItem = prevCartItems.find(cartItem =>
-      cartItem.documentID === cartItemToReduce.documentID);
-  
-    if (existingCartItem.quantity === 1) {
-      return prevCartItems.filter(
-        cartItem => cartItem.documentID !== existingCartItem.documentID
-      );
-    }
-  
+      cartItem[0].documentID === cartItemToReduce[0].documentID);
+
     return prevCartItems.map(cartItem =>
-      cartItem.documentID === existingCartItem.documentID ?
+      cartItem[0].documentID === existingCartItem[0].documentID && cartItem[1] === existingCartItem[1] ?
       {
         ...cartItem,
         quantity: cartItem.quantity - 1
       } : cartItem)
   };
+
+

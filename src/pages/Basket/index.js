@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 
 // reselect
 import { createStructuredSelector } from 'reselect';
@@ -9,6 +9,7 @@ import { selectCartItems, selectCartItemsCount, selectCartTotal } from './../../
 // components
 import LogIn from './../../components/LogIn';
 import BasketItem from '../../components/BasketItem';
+import BasketItemCard from '../../components/BasketItemCard';
 
 const mapState = createStructuredSelector({
     cartItems: selectCartItems,
@@ -25,78 +26,36 @@ const BasketInfo = props => {
             <section className="account-wrapper">
                 <h1 className= "is-size-1 has-text-centered">Basket</h1>
                 <div className="content-wrapper">
-                <div className="columns">
-                    <div className="cart">
+                    <div className="basket-columns">
+                        <div className="basket">
                         {cartItems.length > 0 ? (
-                            <table border="0" cellPadding="0" cellSpacing="0">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <table className="cart__header" border="0" cellPadding="10" cellSpacing="0">
-                                            <tbody>
-                                                <tr>
-                                                    <th align="center">Product</th>
-                                                    <th align="center">Name</th>
-                                                    <th align="center">Size</th>
-                                                    <th align="center">Quantity</th>
-                                                    <th align="center">Price</th>
-                                                    <th align="center">Remove</th>
-                                                </tr>    
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
+                            <>
+                            {cartItems.map((item, pos) => {
+                                return (
+                                    <BasketItemCard key={pos} {...item} />
+                                )
+                            })}
+                            </>
 
-                                <tr>
-                                    <td>
-                                        <table border="0" cellPadding="0" cellSpacing="0">
-                                            <tbody>
-                                                {cartItems.map((item, pos) => {
-                                                    return (
-                                                        <tr key={pos}>
-                                                            <td>
-                                                                <BasketItem {...item} />
-                                                            </td>
-                                                        </tr>
-                                                    )
-                                                })}
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
+                            ) : (
+                                <p> 
+                                    There are no items in your basket.
+                                </p>
+                            )}
+                        </div>
 
-                                <tr>
-                                    <td>
-                                        <table align="right" border="0" cellPadding="10" cellSpacing="0">
-                                            <tbody>
-                                                <tr align="left">
-                                                    <td>
-                                                        <h3>Total: £{total}</h3>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                        ) : (
-                            <p> 
-                                There are no items in your basket.
-                            </p>
-                        )}
-                    </div>
+                        <div className="info">
+                            {/* Options, Vouchers and Checkout */}
 
+                            {cartItems.length > 0 && (
 
-
-
-                    <div className="column">
-                        {/* Options, Vouchers and Checkout */}
-
-                        <button className="button is--active" onClick={() => history.push("/")}>Continue Shopping</button>
-                        <button className={`button ${cartItems.length > 0 ? "is--active" : "is--not-active"}`} disabled={cartItems.length < 1}>Checkout</button>
-                    </div>
+                                <div className="summary">
+                                    <h3>Total: £{total}</h3>
+                                </div>
+                            )}
+                            <button className="button is--active" onClick={() => history.push("/")}>Continue Shopping</button>
+                            <button className={`button ${cartItems.length > 0 ? "is--active" : "is--not-active"}`} disabled={cartItems.length < 1}>Checkout</button>
+                        </div>
                     </div>
                 </div>
             </section>

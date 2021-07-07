@@ -3,6 +3,10 @@ import { useDispatch } from 'react-redux';
 import { removeCartItem, addProduct, reduceCartItem } from './../../redux/Cart/cart.actions';
 
 
+// Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
+
 const BasketItem = (product) => {
     const dispatch = useDispatch();
 
@@ -67,7 +71,8 @@ const BasketItem = (product) => {
                     </td>
                     <td align="center">
                         <span className="cart__button" onClick={() => handleRemoveProduct(product)}>
-                            X
+                            <FontAwesomeIcon icon={faTrashAlt } size="1x"/>
+
                         </span>
                     </td>
                 </tr>

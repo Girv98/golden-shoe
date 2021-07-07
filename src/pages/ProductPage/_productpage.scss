@@ -135,15 +135,6 @@
 }
 
 
-
-// @media (min-width: 1000px) {
-//     .product--options {
-//         min-width: 30vw;
-//     }
-// }
-
-
-
 @media (min-width: 1050px) {
     .wrapper--product {
         grid-template-areas: 
@@ -170,9 +161,9 @@
         max-width: 50vw !important;
     }
 
-    .buttons__size-colour {
-        //max-width: 420px !important;
-    }
+    // .buttons__size-colour {
+    //     //max-width: 420px !important;
+    // }
 
 
 

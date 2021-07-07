@@ -52,17 +52,6 @@ const ProductPage = props => {
     
       }, [dispatch, productID]);
 
-
-
-
-    //   const handleAddToCart = (product) => {
-    //     if (!product) return;
-    //     dispatch(
-    //       addProduct(product)
-    //     );
-    //     history.push('/cart');
-    //   }
-
     const handleAddToCart = (product, size) => {
       if (!product) return;
 
