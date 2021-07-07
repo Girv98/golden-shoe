@@ -70,7 +70,32 @@ const ProductPage = props => {
             <div>
               <a href="#" title="Close" className="modal__close">Close</a>
               <h1>Size Guide</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum harum pariatur voluptas fugiat magnam, ratione fuga laboriosam, inventore nulla porro delectus, in necessitatibus beatae? Voluptate.</p>
+              <div className="table-wrapper">
+              <table cellSpacing="0" cellPadding="0" border="1">
+                    <tbody>
+                      <tr>
+                        <td>UK</td>
+                        {[3, 4, 4.5, 5, 6, 7, 8, 8.5, 9].map((size, index) => (
+                          <td key={index}>{size}</td>
+                        ))}
+                      </tr>
+                      <tr>
+                        <td>US</td>
+                        {[4, 5, 5.5, 6, 7, 8, 9, 9.5, 10].map((size, index) => (
+                          <td key={index}>{size}</td>
+                        ))}
+                      </tr>
+                      <tr>
+                        <td>EU</td>
+                        {[35.5, 36.5, 37.5, 38, 39, 41, 42.5, 43, 44].map(
+                          (size, index) => (
+                            <td key={index}>{size}</td>
+                          )
+                        )}
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
             </div>
           </div>
 
