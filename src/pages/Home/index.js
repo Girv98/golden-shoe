@@ -16,9 +16,12 @@ const Home = props => {
     const { products } = useSelector(mapState);
 
     useEffect(() => {
+        let isMounted = true;
+        if (isMounted) {
         dispatch(
             fetchProductsStart()
-        )
+        )}
+        return () => {isMounted = false}
     }, [dispatch]);
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);

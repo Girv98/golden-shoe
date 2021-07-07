@@ -19,9 +19,7 @@ const BasketItem = (product) => {
 
     const handleRemoveProduct = (documentID) => {
         dispatch(
-            removeCartItem({
-                documentID
-            })
+            removeCartItem(product)
         );
     }
 
@@ -68,7 +66,7 @@ const BasketItem = (product) => {
                         £{productPrice}
                     </td>
                     <td align="center">
-                        <span className="cart__button" onClick={() => handleRemoveProduct(documentID)}>
+                        <span className="cart__button" onClick={() => handleRemoveProduct(product)}>
                             X
                         </span>
                     </td>

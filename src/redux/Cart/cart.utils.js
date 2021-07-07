@@ -39,7 +39,7 @@ export const existingCartItem = ({
     prevCartItems,
     cartItemToRemove
   }) => {
-    return prevCartItems.filter(item => item.documentID !== cartItemToRemove.documentID);
+    return prevCartItems.filter(cartItem => cartItem[0].documentID !== cartItemToRemove.documentID && cartItem[1] !== cartItemToRemove[1]);
   }
   
   export const handleReduceCartItem = ({

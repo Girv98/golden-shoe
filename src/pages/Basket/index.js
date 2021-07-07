@@ -95,7 +95,7 @@ const BasketInfo = props => {
                         {/* Options, Vouchers and Checkout */}
 
                         <button className="button is--active" onClick={() => history.push("/")}>Continue Shopping</button>
-                        <button className="button is--active">Checkout</button>
+                        <button className={`button ${cartItems.length > 0 ? "is--active" : "is--not-active"}`} disabled={cartItems.length < 1}>Checkout</button>
                     </div>
                     </div>
                 </div>

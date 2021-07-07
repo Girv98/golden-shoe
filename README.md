@@ -10,7 +10,7 @@ Demo e-commerce website for AND Digital
 
 This project has the following dependancies:
 
-- React (w/ Redux, DOM, Router)
+- React (w/ Redux, DOM, Router etc.)
 - Node-Sass
 - Firebase
 - Bulma (TO BE REMOVED)
@@ -43,7 +43,7 @@ This will automatically open your browser at `localhost:3000`
 - Filtering by gender, price, size & colour and out-of-stock (DONE)
 - Shows out-of-stock shoes as such (DONE)
 - User Log In & Sign Up (DONE)
-- Fully functional basket
+- Fully functional basket (DONE)
 
 **Possible Future Features**
 - Search Bar
