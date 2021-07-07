@@ -39,7 +39,7 @@ This will automatically open your browser at `localhost:3000`
 - Responsive design (DONE)
 - Card grid of products (DONE)
 - Shoe size picker (DONE)
-- Size Guide (Logic DONE, content to be added)
+- Size Guide (DONE)
 - Filtering by gender, price, size & colour and out-of-stock (DONE)
 - Shows out-of-stock shoes as such (DONE)
 - User Log In & Sign Up (DONE)
@@ -53,7 +53,8 @@ This will automatically open your browser at `localhost:3000`
 - Returns Process
 - View of shoes in multiple colours
 - Social Media share links
-- GraphQL
+- Firebase Hosting
+- GraphQL 
 
 
 
