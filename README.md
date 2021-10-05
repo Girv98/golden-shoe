@@ -36,25 +36,25 @@ This will automatically open your browser at `localhost:3000`
 
 ## Planned Features
 
-- Responsive design (DONE)
-- Card grid of products (DONE)
-- Shoe size picker (DONE)
-- Size Guide (DONE)
-- Filtering by gender, price, size & colour and out-of-stock (DONE)
-- Shows out-of-stock shoes as such (DONE)
-- User Log In & Sign Up (DONE)
-- Fully functional basket (DONE)
+- [x] Responsive desing
+- [x] Card grid of products
+- [x] Shoe size picker
+- [x] Size Guide
+- [x] Filtering by gender, price, size & colour and out-of-stock
+- [x] Shows out-of-stock shoes as such
+- [x] User Log In & Sign Up
+- [x] Fully functional basket
 
 **Possible Future Features**
-- Search Bar
-- Checkout
-- Vouchers
-- Admin
-- Returns Process
-- View of shoes in multiple colours
-- Social Media share links
-- Firebase Hosting
-- GraphQL 
+- [ ] Search Bar
+- [ ] Checkout
+- [ ] Vouchers
+- [ ] Admin
+- [ ] Returns Process
+- [ ] View of shoes in multiple colours
+- [ ] Social Media share links
+- [ ] Firebase Hosting
+- [ ] GraphQL 
 
 
 
